@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delay Tempo Calculator</title>
+    <meta name="description" content="Delay Tempo Calculator" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <section class="header">
+        <h1 class="title">Calculadora de BPM para Delay</h1>
+        <p class="subtitle">
+          Insira abaixo o tempo da música e a figura que deseja configurar para
+          o delay
+        </p>
+      </section>
+
+      <section class="grid">
+        <div class="track-container">
+          <h3 class="track-title">Tempo da Música</h3>
+
+          <div class="form-group">
+            <label for="sourceBpm" class="label">BPM</label>
+            <input
+              type="number"
+              id="sourceBpm"
+              class="input"
+              placeholder="76"
+              min="1"
+              max="300"
+              oninput="setSourceBpm()"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="label">Assinatura de Tempo</label>
+            <div class="button-grid">
+              <button
+                type="button"
+                class="time-signature-btn active-blue"
+                onclick="setSourceTempoSignature('3/4', this)"
+              >
+                3/4
+              </button>
+              <button
+                type="button"
+                class="time-signature-btn"
+                onclick="setSourceTempoSignature('4/4', this)"
+              >
+                4/4
+              </button>
+              <button
+                type="button"
+                class="time-signature-btn"
+                onclick="setSourceTempoSignature('6/8', this)"
+              >
+                6/8
+              </button>
+              <button
+                type="button"
+                class="time-signature-btn"
+                onclick="setSourceTempoSignature('8/4', this)"
+              >
+                8/4
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="track-container">
+          <h3 class="track-title">Configuração do Delay</h3>
+          <div class="form-group">
+            <label for="bpm2" class="label">BPM</label>
+            <input
+              readonly="true"
+              type="number"
+              id="targetBpm"
+              class="input"
+              min="1"
+              max="300"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="label">Assinatura de Tempo</label>
+            <div class="button-grid">
+              <button
+                type="button"
+                class="time-signature-btn active-purple"
+                onclick="setTargetTempoSignature('3/4', this)"
+              >
+                3/4
+              </button>
+              <button
+                type="button"
+                class="time-signature-btn"
+                onclick="setTargetTempoSignature('4/4', this)"
+              >
+                4/4
+              </button>
+              <button
+                type="button"
+                class="time-signature-btn"
+                onclick="setTargetTempoSignature('6/8', this)"
+              >
+                6/8
+              </button>
+              <button
+                type="button"
+                class="time-signature-btn"
+                onclick="setTargetTempoSignature('8/4', this)"
+              >
+                8/4
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
